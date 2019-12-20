@@ -1,0 +1,298 @@
+*{
+	/* 消除所有默认的内边距和外边距 */
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	/* 清楚a标签的下划线并更改颜色 */
+	text-decoration: none;
+	color: #666;
+}
+body{
+	padding: 20px;
+	color: #666;
+}
+table{
+	border-collapse: collapse;/* 合并表格边框 */
+	border-spacing: 0;/* 设置单元格边距间的距离 */
+	border: 0;
+	text-align: center;
+	width: 1000px;
+}
+th{
+	border: 1px solid #00FFFF;
+	background-color: #00CED1;
+	border-top: 3px solid #00FFFF;
+	height: 50px;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+td{
+	border: 1px solid #00FFFF;
+	padding: 10px;
+	color: #444;
+}
+tbody tr:hover{
+	/* hover:鼠标移入 */
+	background-color: rgba(127,255,212,0.3);
+	/* background-color: red; */
+}
+.on {
+	/*背景颜色填充的开关*/
+	background-color: rgb(127,255,212);
+}
+/* =========== Start ============= */
+.checkbox{
+	/* 多选按钮列的样式 */
+	width: 60px;
+}
+.check{
+	cursor: pointer;
+}
+.goods{
+	/* 商品列的样式 */
+	width: 300px;
+}
+.goods>img{
+	/* 图片尺寸样式 */
+	width: 100px;
+	height: 80px;
+	margin-right: 10px;
+	float: left;
+}
+.goods>span{
+	/* 商品列的文字样式 */
+	width: 180px;
+	margin-top: 30px;
+	text-align: left;
+	float: left;
+}
+
+.price{
+	/* 单位列样式 */
+	width: 130px;
+}
+/* == count数量单元列的css -- start == */
+.count{
+	width: 70px;
+}
+.count>input{
+	/* 数量text框的尺寸 */
+	width: 25px;
+	height: 20px;
+	text-align: center;
+	align-content: center;
+}
+.count>.add , .count>.reduce{
+	/* 设置add reduce两个按钮的尺寸 */
+	height: 22px;
+	width: 17px;
+	border: 1px solid #aaa;
+	background-color: #e2e2e2;
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;/* 行高 */ 
+}
+.count>.add:hover , .count>.reduce:hover{
+	/* 设置add reduce 按钮鼠标触发后的效果 */
+	font-size: 18px;
+	color: red;
+	font-weight: bold;
+	/* z-index: 3px; */
+	background-color: #444;
+	cursor: pointer;/* 光标变为小手 */
+}
+.count>.add , .count>input , .count>.reduce{
+	/* 设置add reduce input三个class的定位 */
+	float: left;
+	margin-right: -1px;/* 重合 */
+
+	position: relative;/* 定位元素:relative相对定位 */
+	z-index: 0;/* 层次0 */
+}
+/* count == End */
+
+.subtotal{
+	/* 小计列样式 */
+	width: 150px;
+	font-weight: bold;
+	color: red;
+	font-family: "微软雅黑";
+}
+
+.operation{
+	width: 80px;
+}
+.operation>.delete:hover{
+	/* 操作列的删除功能的触发样式 */
+	cursor: pointer;
+	color: red;
+	text-decoration: underline;
+}
+
+/* =========== End ============= */
+
+/* ========== foot表页脚 Start ============ */
+img{
+	/* 图片尺寸样式 */
+	width: 100px;
+	height: 80px;
+	margin-right: 10px;
+	float: left;
+}
+
+.foot{
+	/* 设置表页脚的尺寸、高度、颜色、浮动、边框等样式 */
+	width: 1000px;
+	height: 48px;
+	margin-top: 10px;
+	color: #666;
+	float: left;
+	border: 1px solid #c8c8c8;
+	/* background-color: #eaeaea; */
+	background-image: linear-gradient(rgb(241,241,241),rgb(226,226,226));/* 渐变 */
+	position: relative;
+	z-index: 8;
+}
+.fl{float: left;}
+.fr{float: right;}
+.foot div , .foot a{
+	/* 定义表页脚的内容样式1 */
+	line-height: 48px;/* 行高 */
+	height: 48px;
+}
+.foot>.foot-all{
+	/* 定义表页脚全选按钮及删除的样式 */
+	width: 100px;/* 要考虑到后缀的两个字 */
+	height: 48px;
+	line-height: 48px;
+	padding-left: 10px;
+	color: #666666;
+}
+.foot>.closing{
+	/* 结算按钮的样式设计 */
+	border-left: 2px solid #C8C8C8;
+	width: 100px;
+	text-align: center;
+	font-size: #000;
+	font-weight: bold;
+	cursor: pointer;
+	/* 鼠标小手 */
+}
+.foot>.closing:hover{
+	/* 结算按钮被触发 */
+	background-color: #FFFF00;
+	color: red;
+}
+.foot>.total{
+	/* 合计样式 */
+	margin: 0px 20px 0px 0px;
+}
+.foot #priceTotal , .foot #selectedTotal{
+	/* 价格合计和数量合计的数字样式 */
+	color: red;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	margin-right: 5px;
+}
+.foot .selected{
+	cursor: pointer;
+	/* 小手 */
+}
+.foot .selected .arrow{
+	position: relative;
+	top: 0px;
+	margin-left: 3px;
+}
+.foot .selected .down{
+	position: relative;
+	top:0px;
+	display: none;
+	/* hide */
+}
+.foot .selected:hover .arrow{
+	color: red;
+	/* 鼠触红 */
+}
+/* 上下箭头的切换 */
+.show .selected .up{
+	display: none;
+}
+.show .selected .down{
+	display: inline;
+}
+/* End */
+/* 添加 show 样式css 之后，.up\.down\.selected-view\.arrow\div\会被触发 */
+.foot .selected-view{
+	display: none;
+	width: 1000px;
+	border: 1px solid #C8C8C8;
+	position: absolute;
+	z-index: 9;
+	left: -1px;
+	bottom: 48px;
+	height: auto;
+	background-color: #fff;
+}
+.show .selected-view{
+	display: block;
+	/* 获得.show后则显示selected-view */
+}
+.foot .selected-view div{
+	height: auto;
+}
+/* 小方块的样式设计 */
+.foot .selected-view .arrow{
+	font-size: 16px;
+	line-height: 100%;
+	color: #FFFFFF; 
+	position: absolute;
+	/* left: 600px; */
+	right: 330px;
+	bottom: -9px;
+}
+.foot .selected-view .arrow span{
+	color: #FFFFFF;
+	position: absolute;
+	 left: 0; 
+	 bottom: 1px; 
+	 display: none;
+}
+
+.foot #selectedViewList{
+	/* 尺寸 */
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.foot #selectedViewList div{
+	/* div结构尺寸和样式 */
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	left: 10px;
+	width: 100px;
+	height: 80px;
+	border: 1px solid #ccc;
+	margin: 10px;
+}
+/* “取消选择” 单元框样式设计 */
+.foot #selectedViewList div span{
+	display: none;/* 默认无触发隐藏none */
+	color: #fff;
+	font-size: 12px;
+	position: absolute;/* 定位 */
+	top: 0;
+	right: 0;
+	
+	width: 60px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	background-color: rgba(0,0,0,0.7);
+	cursor: pointer;
+}
+.foot #selectedViewList div:hover span{
+	/* 鼠标浮动触发 */
+	display: block;
+}
+/* === 表页脚 End === */

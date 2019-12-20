@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Js实训|购物车</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="js/hex_text.js"></script>
+	</head>
+	<body>
+		<!-- 商品展示表 start -->
+		<table id="cartTable">
+			<!-- 标题头 -->
+			<thead>
+				<tr>
+					<th><!-- 全选按钮 -->
+						<label><!-- label标签 为 input 元素定义标注（标记） -->
+							<input  type="checkbox" class="check-all check"/>
+						</label>
+					</th>
+					<th>商品</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>小计</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<!-- ========================== -->
+			<tbody><!-- 商品 -->
+				<tr><!-- 商品展示：卡西欧 -->
+					<td class="checkbox"><!-- 多选列 -->
+						<input type="checkbox" class="check-one check" />
+					</td>
+					<td class="goods"><!-- 商品列 -->
+						<img src="images/1.jpg" >
+						<span>
+							Casio/卡西欧 EX-TR350
+						</span>
+					</td>
+					<td class="price"><!-- 价格列 -->
+						5999.00
+					</td>
+					<td class="count"><!-- 数量列 -->
+						<span class="reduce"></span>
+						<input type="text" value="1" class="count-input" />
+						<span class="add">+</span>
+					</td>
+					<td class="subtotal">
+						5999.00 <!-- subtotal = price*count-->
+					</td>
+					<td class="operation">
+						<span class="delete">
+							删除 
+						</span>
+					</td>
+				</tr>
+				<tr><!-- 商品展示：佳  能 -->
+					<td class="checkbox"><!-- 多选列 -->
+						<input type="checkbox" class="check-one check" />
+					</td>
+					<td class="goods"><!-- 商品列 -->
+						<img src="images/2.jpg" >
+						<span>
+							Canon/佳能 PowerShot SX50HS
+						</span>
+					</td>
+					<td class="price"><!-- 价格列 -->
+						3888.50
+					</td>
+					<td class="count"><!-- 数量列 -->
+						<span class="reduce"></span>
+						<input type="text" value="1" class="count-input" />
+						<span class="add">+</span>
+					</td>
+					<td class="subtotal">
+						3888.50 <!-- subtotal = price*count-->
+					</td>
+					<td class="operation">
+						<span class="delete">
+							删除
+						</span>
+					</td>
+				</tr>
+				<tr><!-- 商品展示：尼  康 -->
+					<td class="checkbox"><!-- 多选列 -->
+						<input type="checkbox" class="check-one check" />
+					</td>
+					<td class="goods"><!-- 商品列 -->
+						<img src="images/3.jpg" >
+						<span>
+							Sony/索尼 DSC-WX300
+						</span>
+					</td>
+					<td class="price"><!-- 价格列 -->
+						1428.50
+					</td>
+					<td class="count"><!-- 数量列 -->
+						<span class="reduce"></span>
+						<input type="text" value="1" class="count-input" />
+						<span class="add">+</span>
+					</td>
+					<td class="subtotal">
+						1428.50 <!-- subtotal = price*count-->
+					</td>
+					<td class="operation">
+						<span class="delete">
+							删除
+						</span>
+					</td>
+				</tr>
+				<tr><!-- 商品展示：富  士 -->
+					<td class="checkbox"><!-- 多选列 -->
+						<input type="checkbox" class="check-one check" />
+					</td>
+					<td class="goods"><!-- 商品列 -->
+						<img src="images/4.jpg" >
+						<span>
+							Fujifilm/富士 instax mini 25
+						</span>
+					</td>
+					<td class="price"><!-- 价格列 -->
+						640.60
+					</td>
+					<td class="count"><!-- 数量列 -->
+						<span class="reduce"></span>
+						<input type="text" value="1" class="count-input" />
+						<span class="add">+</span>
+					</td>
+					<td class="subtotal">
+						640.60 <!-- subtotal = price*count-->
+					</td>
+					<td class="operation">
+						<span class="delete">
+							删除
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- 商品展示表 End-->
+		<!-- =================================== -->
+		<!-- foot表页脚 start -->
+		<div class="foot" id="foot">
+			<label class="fl foot-all">
+				<input type="checkbox" class="check-all check"/>
+				&nbsp;全选
+			</label>
+			<a class="fl delete" id="deleteAll" href="javascript:;">
+				删除
+			</a>
+			
+			<div class="fr closing">
+				结&nbsp;算
+			</div>
+			<div class="fr total">
+				合计:￥<span id="priceTotal">00.00</span>
+			</div>
+			<div class="fr selected" id="selected">
+				已选商品
+				<span id="selectedTotal">0</span>件
+				<span class="arrow up">	↑ </span>
+				<span class="arrow down"> ↓ </span>
+			</div>
+			
+			<!-- 隐藏的商品展示列表 arrow up/down -- start -->
+			<div class="selected-view">
+				<div id="selectedViewList" class="clearfix">
+					<div>
+						<img src="images/1.jpg" >
+						<span>取消选择</span>
+					</div>
+				</div>
+				<span class="arrow">
+					♦
+					<span>♦</span>
+				</span>
+			</div>
+			<!-- End -->
+		</div>
+		<!-- foot表页脚 End -->
+	</body>
+</html>
