@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>学生成绩动态表</title>
+	</head>
+	<body>
+		<form id="stu">
+			学号：<input id="id" /><br />
+			姓名：<input id="name" /><br />
+			数学：<input id="cj_1" /><br />
+			语文：<input id="cj_2" /><br />
+			<input type="button" id="sum" value="总分" onclick="SunShow()"/>
+			<input type="reset" />
+		</form>
+		<div id="info" style="color: red;"></div>
+		<table id="cj" border="1" width="100%">
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>数学</th>
+				<th>语文</th>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			// add表格动态
+			function AddTable(studen){
+				var rs = document.getElementById("cj");//表格
+				var len = rs.rows.item(0).cell.length;
+				
+				add = rs.insertRow(rs.rows.length);
+				for( i = 0 ; i < len ; i++){
+					add.insertCell(i);
+				}
+				add.cells[0].innerHTML = studen.id;
+				add.cells[1].innerHTML = studen.name;
+				add.cells[2].innerHTML = studen.cj_1 ; 
+				add.cells[3].innerHTML = studen.cj_2 ;
+			}
+			
+			//学生函数
+			function stu(id,name,cj_1,cj_2){
+				this.id = id ; 
+				this.name = name ;
+				this.cj_1 = parseFloat(cj_1) 
+				this.cj_2 = parseFloat(cj_2) ;
+			}
+			stu.prototype.sum = function(){
+				return cj_1 + cj_2 ; //返回总分
+			}
+			
+			
+			//SunShow
+			function SunShow(){
+				with(stu){
+					//验证学号和姓名
+					if(id.value == "" || name.value == ""){
+						document.getElementById("info").innerHTML = "学号和姓名不得为空";
+						return;
+					}
+					// 使用 elements 方法验证成绩
+					for( var n = 2 ; n < 4 ; n++){
+						var sum = parseFloat(elements[n].value);
+						if( sum < 0 || sum > 100 || isNaN(sum)){
+							document.getElementById("info").innerHTML = "成绩在0~100以内";
+							return;
+						}
+					}
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

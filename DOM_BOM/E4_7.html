@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动态删除学生表格一行</title>
+	</head>
+	<body>
+		<form name="stuForm">
+			学号：<input name="stuId" /><br>
+			姓名：<input name="stuName" /><br>
+			语文：<input name="stuScore1" /><br>
+			数学：<input name="stuScore2" /><br>
+			<input type="button" value="总分" onclick="SumShow()" />
+			<input type="reset" value="重置" />
+		</form>
+		<div id="info"></div>
+		<table id="cj" cellspacing="0" width="100%" align="center" border="1">
+			<caption style="font-size: 28px; line-height: 50px; color: blue;">学生信息统计表</caption>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>语言</th>
+				<th>数学</th>
+				<th>总分</th>
+				<th>删除</th>
+			</tr>
+		</table>
+		<script>
+			//学生对象 
+			function Student(Id, name, score1, score2) {
+				this.Id = Id;
+				this.name = name;
+				this.score1 = parseFloat(score1);
+				this.score2 = parseFloat(score2);
+			}
+			//prototype 属性允许向对象添加属性和方法
+			Student.prototype.sum = function() {
+				return this.score1 + this.score2;
+			}
+
+			//addTable(stu)实现动态添加行与列来展示学生信息
+			function addTable(stu) {
+				//console.log(stu);
+				var stuTable = document.getElementById("cj"); //获得表格
+				//var colsNum=5;
+				var colsNum = stuTable.rows.item(0).cells.length;
+				//console.log(colsNum);
+				//console.log(stuTable);
+				//console.log(stuTable.rows);
+				//console.log(stuTable.rows.item(0).cells);
+
+				rs = stuTable.insertRow(stuTable.rows.length); //在表格最后插入一行
+				for (var i = 0; i < colsNum; i++) { //循环插入单元格
+					rs.insertCell(i);
+				}
+				rs.cells[0].innerHTML = stu.Id;
+				rs.cells[1].innerHTML = stu.name;
+				rs.cells[2].innerHTML = stu.score1;
+				rs.cells[3].innerHTML = stu.score2;
+				rs.cells[4].innerHTML = stu.sum();
+
+				rs.cells[5].innerHTML = "<a id="+stu.Id+" href=javascript:delScore('"+stu.Id+"');>删除</a>";
+			}
+
+			var count;
+			var students = new Array(); //使用数据保存学生对象
+
+			function SumShow() {
+				with(stuForm) {
+					if (stuId.value == "" || stuName.value == "") {
+						document.getElementById('info').innerHTML = "学号、姓名不能为空！";
+						return;
+					}
+					for (var i = 2; i <= 3; i++) {
+						var score = parseFloat(elements[i].value);
+						if (score > 100 || score < 0 || isNaN(score)) {
+							document.getElementById('info').innerHTML = "成绩要在0~100之间，请重新输入！";
+							return;
+						}
+					}
+					//创建对象实例
+					student = new Student(stuId.value, stuName.value, stuScore1.value, stuScore2.value);
+					//console.log(student);
+					document.getElementById("info").innerHTML = "";
+					for (var n in students) { //验证学号
+						if (students[n].Id == student.Id) {
+							document.getElementById("info").innerHTML += "学号重复！";
+							return;
+						}
+					}
+					//console.log(student);
+					students[count] = student;
+					count++;
+					addTable(student);
+				}
+			}
+
+			function delScore(ID) {
+				//console.log(ID);
+				var a = document.getElementById(ID); //获得删除按钮
+				//console.log(a);
+				var i = a.parentNode.parentNode.rowIndex; //获得被删除的行的索引
+				//console.log(i);
+				document.getElementById('cj').deleteRow(i); //删除行
+				for (var n in students) {
+					if (students[n].Id == ID) {
+						students.splice(n, 1);//删除数组中对应的学生对象
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

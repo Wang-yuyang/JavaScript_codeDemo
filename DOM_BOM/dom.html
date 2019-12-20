@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM-test</title>
+	</head>
+	<body>
+		<div id="demo">
+			
+		</div>
+		
+		<script>
+			// 添加链接a标签
+			var newElement = document.createElement("a"); //创建一个a标签
+			var newText = document.createTextNode("百度一下");
+			var newAttr = document.createAttribute("href");
+			newAttr.value = "https://www.baidu.com";
+			newElement.appendChild(newText);
+			newElement.setAttributeNode(newAttr);
+			
+			// 添加按钮标签input_button
+/* 			var newElement_input = document.createElement("input");
+			var newAttr_type = document.createAttribute("type");
+			newAttr_type.value = "button";
+			var newAttr_value = document.createAttribute("value");
+			newAttr_value.valule = "百度一下";
+			newElement_input.setAttributeNode(newAttr_type);
+			newElement_input.setAttributeNode(newAttr_value); */
+			
+			// 将按钮标�

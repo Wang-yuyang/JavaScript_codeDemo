@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form name="StuForm">
+			<input type="text" name="id" /><br/>
+			<input type="text" name="name" /><br/>
+			<input type="text" name="yw" /><br/>
+			<input type="text" name="sx" /><br/>
+			<input type="button" value="提交" onclick="show()" />
+			<input type="reset" value="重置" />
+		</form>
+		<div id="info"></div>
+		
+		<script>
+			function Studen(id,name,yw,sx){
+				this.id = id ; 
+				this.name = name ; 
+				this.yw = parseFloat(yw) ; 
+				this.sx = parseFloat(sx) ; 
+				
+			}
+			// 在对象外添加对象方法:obj.prototype.fun
+			Studen.prototype.sum=function(){
+				return this.yw + this.sx;
+			}
+			Studen.prototype.print = function(){
+				document.write("学号:"+this.id+"  姓名:"+this.name+"  总分:"+this.sum()+"<br/>");
+			}
+			
+			function show(){
+				with(StuForm){
+					if(id.value=="" || name.value==""){
+						document.getElementById("info").innerHTML ="学号和姓名不得为空";
+						return;
+					}
+					for(i = 2 ; i<=3; i++){
+						var num = parseFloat(elements[i].value);
+						if( num > 100 || num < 0 || isNaN(num)){
+							document.getElementById("info").innerHTML ="成绩输入有误";
+							return;
+							
+						}
+					}
+					var stu = new Studen(id.value,name.value,elements[2],elements[3]);
+					document.getElementById("info").innerHTML = stu.print();
+				}
+			}
+		</script>
+	</body>
+</html>

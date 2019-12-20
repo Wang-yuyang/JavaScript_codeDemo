@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>创建正则</title>
+	</head>
+	<body>
+		<script>
+			var re = new RegExp('a');// 简单的正则
+			// 正则在普通语句中可以用"/……/"将正则式包围
+			// match():匹配一个或多个正则,并返回匹配的内容
+			var re = /Hello/ig;//全局且不屈服大小写
+			var str = "hello World! HELLO WORLD!";
+			alert(str.match(re));
+			//search():匹配正则,并返回匹配内容的首位置
+			var re = /Hello/i;
+			var str = "HELLO WORLD！！";
+			alert(str.search(re));
+			//replace():利用正则匹配并替换
+			var re = /hello/ig;
+			var str = "hello World! HELLO WORLD!";
+			alert(str.replace(re,"YES"));
+			//search():检索正则匹配
+			//split():正则拆分,利用正则将字符串进行拆分数组
+			var re = / /ig;
+			var str = "hello World! HELLO WORLD!";
+			alert(str.split(re));
+		
+		</script>
+	</body>
+</html>

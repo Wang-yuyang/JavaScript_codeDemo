@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+	</head>
+	<style>
+		#login {
+			width: 560px;
+			height: 350px;
+			border: 1px solid #ccc;
+			position: absolute; 
+			background: #fff; 
+			}
+		#login  form{margin: 20px 5px 20px 90px;}
+		#login h2 {
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			font-size: 16px;
+			letter-spacing: 1px;
+			color: #fff;
+			background: #044599;
+			margin: 0;
+			padding: 0;
+			border-bottom: 1px solid #ccc;
+			margin: 0 0 20px 0;
+			} 				
+		#login div 
+			{
+			font-size: 14px;
+			color: #666;
+			padding: 5px 0;
+			text-align: left;
+			}
+				
+		#login input.text  {
+			width: 200px;
+			height: 25px;
+			border: 1px solid #ccc;
+			background: #fff;
+			font-size: 14px;
+			} 
+		.pc{ 
+	        margin:0 8px; 
+	        color: #E4393C;  
+	        }
+		#login input.submit {
+			width: 107px;
+			height: 40px;
+			background-color: limegreen;
+			border: none;
+			cursor: pointer;
+			color: #FFFFFF;
+			font-size: 22px;
+			font-family: "黑体";
+			margin: 20px 120px;
+			border-radius: 6px;
+		}
+	</style>
+	<body>
+		<div id="login">
+			<form action="" method="post" id="regform" name="regform">
+				<div>用户账号：<input type="text" id="user" name="user" class="text"  /><span class="pc" id="userInfo">*</span></div>
+				<div>用户密码：<input type="password" id="pass" name="pass" class="text" /><span class="pc" id="passInfo">*</span></div>
+				<div>确认密码：<input type="password" id="rpass" name="rpass" class="text" /><span class="pc" id="rpassInfo">*</span></div>
+				<div>个人邮箱：<input type="email" id="email" name="email" class="text" /><span class="pc" id="emailInfo">*</span></div>
+				<div>联系电话：<input type="tel" id="tel" name="tel" class="text"/><span class="pc" id="telInfo">*</span></div>
+				<input type="submit" value="注册" id="submit" name="submit"/>
+				
+				
+			</form>
+			<script type="text/javascript">
+				function getId(id){
+					return document.getElementById(id);
+				} // 提示用语
+				var userInfo = getId('userInfo');
+				var passInfo = getId('passInfo');
+				var rpassInfo = getId('rpassInfo');
+				var emailInfo = getId('emailInfo');
+				var telInfo = getId('telInfo');
+				
+				function formcheck(obj , oInfo , re , Info){
+					if(re.test(obj.value)){
+						oInfo.innerHTML = "&radic;";
+						oInfo.style.color = "red";
+					} else {
+						oInfo.innerHTML = Info ;
+						oInfo.style.color = "red";
+					}
+				}
+				
+				var uname = regform.user;
+				uname.focus();
+				uname.onblur = function() {
+					formcheck(this,unameInfo,/^[A-Za-z]\w{3,15}$/,"首字母为英文，由字母、数字、下划线组成4~16位字符");
+					checkName=true;
+				}
+				
+				var pass = regform.pass;
+				pass.focus();
+				pass.onblur = function() {
+					formcheck(this,passInfo,/^\w{6,}$/,"密码由字符、数字、下划线组成6位以上的字符串");
+					
+				}
+				
+				var rpass = regform.rpass;
+				rpass.focus();
+				rpass.onblur = function() {
+					formcheck(this,rpassInfo,/^\w{6,}$/,"密码由字符、数字、下划线组成6位以上的字符串");
+					if(pass.value != rpass.value){
+						rpassInfo.innerHTML = "密码不一致";
+						rpassInfo.style.color = 'red';
+					}
+				}
+				
+				var email = regform.email;
+				email.focus();
+				email.onblur = function() {
+					formcheck(this,emailInfo,/^(\w-*)+@(\w-?)+(\.\w{2,})+$/,"邮箱格式错误");
+				}
+				
+				var tel = regform.tel;
+				tel.focus();
+				tel.onblur = function() {
+					formcheck(this,telInfo,/^1[23456]\d{9}$/,"手机号错误");
+				}
+				
+	
+				
+				
+			</script>
+		</div>
+	</body>
+</html>

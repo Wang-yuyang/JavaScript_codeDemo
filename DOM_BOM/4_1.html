@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>学生</title>
+	</head>
+	<body>
+		<script>
+			function Studen(id,name,yw,sx){
+				this.id = id ; 
+				this.name = name ; 
+				this.yw = parseFloat(yw) ; 
+				this.sx = parseFloat(sx) ; 
+				
+			}
+			// 在对象外添加对象方法:obj.prototype.fun
+			Studen.prototype.sum=function(){
+				return this.yw + this.sx;
+			}
+			Studen.prototype.print = function(){
+				document.write("学号:"+this.id+"  姓名:"+this.name+"  总分:"+this.sum()+"<br/>");
+			}
+						
+			var Stu = new Studen("2018210095","Mirror",100,100);
+			Stu.print();
+			
+			var Stu1 = new Studen("2018210001","佚名",60,-1);
+			Stu1.print();
+			
+		</script>
+	</body>
+</html>

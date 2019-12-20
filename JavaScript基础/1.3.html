@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组对象的属性和方法</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var Array1 = new Array('a','b','c');
+			var Array2 = new Array('y','x','z');
+			// toString():数组元素转为字符串
+			var Str1 = Array1.toString();
+			console.log(typeof Str1,"\n",typeof Array1);
+			// join(""):用一个分隔符连接元组内容组成string
+			var Str2 = Array2.join("+");
+			console.log(Str2);
+			// shift():将数组的第一个元素移除(并返回)
+			console.log(Array1.shift() , Array1);
+			// unshift():在头部插入一个元素(返回插入后的数组长度)
+			console.log(Array1.unshift('a'),Array1);
+			// pop():将数组的尾部元素移除(并返回)
+			console.log(Array1.pop(),Array1);
+			// push():在数组尾部插入元素(返回插入后的数组长度)
+			console.log(Array1.push('c'),Array1);
+			// concat(array):合并数组
+			console.log(Array1.concat(Array2));
+			// slice(x,y):返回数组一部分,参数从X开始的Y个数组元素
+			console.log(Array1.slice(0,1));
+			// splice(index,howmany,item1,…,itemN):插入,删除,替换一个数组元素
+				// 删除:需要使用index,howmany参数,指定删除开始索引和删除的数项
+			console.log(Array1.splice(0,1),Array1);// 从第0（1）个元素开始删除1个元素
+				// 插入:使用三个参数,指定开始索引位置,和删除的数项,以及插入的内容(如果删除的数项为0，就表示插入)
+			console.log(Array1.splice(0,0,"n","l"),Array1);// 从0索引位置开始,删除0个元素,并插入item元素
+				// 替换:使用三个参数,指定开始索引的位置,和删除的数项,以及需要替换的内容
+			console.log(Array1.splice(0,2,"a","d"),Array1);// 删除两个元素,并插入代替原元素的位置,就实现了替换元素的目的
+			// sort():升序排序
+			console.log(Array1.sort());
+			//reverse():数组反向排序(反转)
+			console.log(Array1.reverse());
+			// sort()+reverse() ==> 降序排序
+			console.log(Array1.sort().reverse());
+			var Num = new Array(2,32,23,22,3,45,87,38,12,2);
+			// 数字升序
+			console.log(Num.sort(function(a,b){return a-b}));
+			// 数字降序
+			console.log(Num.sort(function(a,b){return b-a}));
+		</script>
+	</body>
+</html>

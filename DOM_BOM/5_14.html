@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="myDiv">
+			<h2 id="h2"> I Love HCIT </h2>
+			<hr id="hr" />
+			<p id="p1">淮安信息职业技术学院</p>
+			<p id="p2">Mirror王宇阳</p>
+		</div>
+		<script>
+			//element.replaceChild(node1,node2) : node1替换node2
+			var  h2 = document.getElementById("h2");
+			var  p = document.createElement("p");
+			var text = document.createTextNode("Hello,World!");
+			p.appendChild(text);
+			
+			h2.parentNode.replaceChild(p,h2);//替换
+		</script>
+	</body>
+</html>

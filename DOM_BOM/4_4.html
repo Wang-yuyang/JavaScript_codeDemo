@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table id="cj" color: black; width: 100%; border: '1';>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>语文</th>
+				<th>数学</th>
+			</tr>
+			
+		</table>
+		<input type="button" value="添加" onclick="add()"/>
+		<input type="button" value="修改" onclick="xiu()"/>
+		<script>
+			function add(){
+				rs = document.getElementById("cj").insertRow(1);
+				var C0 = rs.insertCell(0);
+				var C1 = rs.insertCell(1);
+				var C2 = rs.insertCell(2);
+				var C3 = rs.insertCell(3);
+				
+				C0.innerHTML="单元内容";
+				C1.innerHTML="单元内容";
+				C2.innerHTML="单元内容";
+				C3.innerHTML="单元内容";
+				
+				
+			}
+			
+			function xiu(){
+				var xiu = document.getElementById("cj").rows[1].cells[0];
+				xiu.innerHTML = "修改后";
+				xiu.style.color = "red";
+			}
+		</script>
+	</body>
+</html>

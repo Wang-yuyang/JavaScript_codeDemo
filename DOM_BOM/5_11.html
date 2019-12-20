@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>创建节点</title>
+	</head>
+	<body>
+		<div id="myDiv">
+			<p id="p1">淮安信息职业技术学院</p>
+			<p id="p2">Mirror王宇阳</p>
+		</div>
+		
+		<script>
+			var pare = document.getElementById("myDiv");
+			var elements = document.createElement("h1");
+			var text = document.createTextNode("Hollo,World!");
+			elements.appendChild(text);//向p标签添加文本元素
+			// var styles = document.createAttribute('color');
+			// styles.value = '';
+			// elements.setAttributeNode(styles);
+			pare.appendChild(elements);//向div添加p标签节点
+			
+			var p1 = document.getElementById("p1").firstChild;// 获取文本节点
+			var p1 = document.getElementById("p1");// 获取标签节点
+			pare.appendChild(p1);
+		</script>
+	</body>
+</html>

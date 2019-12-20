@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>定时器</title>
+	</head>
+	<body>
+		<p>显示当前系统时间</p>
+		<p id="demo"></p>
+		<button onclick ="MyTime()">STOP</button>
+		<script>
+			//var my = setInterval(function MyTime(),1000);
+			function MyTime(){
+				var date = new Date();
+				var time = date.toLocaleTimeString();
+				document.getElementById("demo").innerHTML=time;
+			}
+		</script>
+	</body>
+</html>

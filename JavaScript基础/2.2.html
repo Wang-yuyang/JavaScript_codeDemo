@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日期对象的属性和方法</title>
+	</head>
+	<body>
+		<script>
+			var Date1 = new Date();
+			document.write(Date1 + "<br />");
+			// set : 设置时间和日期指
+			/* setDate:		日
+			*  setMonth:	月份
+			*  setSeconds:	秒数
+			*  setHours：	小时
+			*  setMinutes:	分钟
+			*  setTime:		时间戳
+			*/
+			Date1.setDate(11);//设置了Date1的天数(日)
+			document.write(Date1 + "<hr />");
+			
+			// get:返回Date对象的时间和日期
+			/*
+			* getDate():返回天数
+			* getDay():返回星期
+			* getHours():返回小时数
+			* getMinutes():返回分钟数
+			* getSeconds():返回秒数
+			* getMonth():返回月份
+			* getFullYear():返回年份数（四位）
+			* getTime():返回自1970-1-1计算的毫秒（时间戳）
+			* 
+			*/
+		   var StrDate = Date1.getFullYear() +"年" + Date1.getMonth() + "月" + Date1.getDate() + "日" + 
+							Date1.getHours() + ":" + Date1.getMinutes() + ":" + Date1.getSeconds() ; 
+		   document.write(StrDate+"<br/>");
+		   document.write(Date1.getTime()+"<hr/>")
+		   
+		   
+		   // to:返回字符串时间
+		   /* 
+		   */
+		  var Date1 = new Date();
+		  document.write(Date1.toLocaleString()+"<br/>"); // 返回本地的时间字符串
+		  document.write(Date1.toGMTString()+"<hr/>");//返回格林尼治时间字符串
+		  
+		  // Date.parse(date):返回某日期的时间戳(毫秒)
+		  document.write(Date.parse(Date1)+"<br/>");
+		  // Date.UTC(date):
+		  document.write(Date.UTC());
+		  //
+		  document.write("<hr/>")
+		  Date.parse("2020-09-05")
+		  Date1 = new Date(2020,9,5);//下一次生日
+		  Date2 = new Date();//当前时间
+		  day1 = Date1.getTime();
+		  day2 = Date2.getTime();
+		  Day = day1 - day2 ;
+		  document.write(Math.floor(Day/(24*60*60*1000)));
+		  
+		  
+		  
+		  
+		</script>
+	</body>
+</html>

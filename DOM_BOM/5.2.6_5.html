@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内容发生变化 onchange事件</title>
+	</head>
+	<body>
+		<input id="text" type="text" onchange="Mydemo()"/>
+		<p>当内容发生改变就会发生变化</p>
+		<script>
+			function Mydemo(){
+				document.getElementById("text").style=color:'red';
+			}
+		</script>
+	</body>
+</html>

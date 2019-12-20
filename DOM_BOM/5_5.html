@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>login</title>
+	</head>
+	<style>
+		#login {
+			position: absolute;// 该属性规定元素定位https://www.w3school.com.cn/cssref/pr_class_position.asp
+		}
+	</style>
+	<body>
+		<div id="login">
+			<img src="../5/img/login.gif" />
+		</div>
+		<script>
+			function show(){
+				//高度和宽度
+				var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth ; 
+				var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+				var login = document.getElementById("login"); //图
+			
+				var top = (h-360)/2;
+				var left = (w-396)/2;
+				login.style.top = top+'px';
+				login.style.left = left+'px';
+			}	
+			window.onload = function(){
+				show();
+			};
+			window.onresize = function() {
+				show(); //浏览器窗口发生变化
+			};
+		</script>
+	</body>
+</html>

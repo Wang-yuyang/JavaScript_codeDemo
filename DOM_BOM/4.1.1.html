@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js自定义对象</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var por = new Object() ;// new一个对象
+			por.name = "杨宇";
+			por.age = "19";
+			por.print=function(){
+				document.write("姓名:"+this.name+"   "+"年龄:"+this.age);
+			}
+			por.print();
+			
+			var por1 = {
+				name : "mirror",
+				age : "19",
+				print : function() {
+					document.write("姓名:"+this.name+"  "+"年龄:"+this.age);
+				}
+			};
+			por1.print();
+			document.write("<br/>")
+			function por2(name,age){
+				this.name = name ;
+				this.age = age;
+				this.print = function(){
+					document.write("姓名:"+this.name+"  "+"年龄:"+this.age);
+				}
+			};
+			var por3 = new por2("Mirror","19");
+			por3.print();
+			
+			
+			
+		</script>
+	</body>
+</html>

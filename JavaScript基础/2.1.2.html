@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>特殊数据类型</title>
+	</head>
+	<body>
+		<script>
+			document.write("<pre>Hello\nWorld</pre>");
+			document.write("I\'am Man<br/>");
+			document.write("\66");// 54 -> 6
+			document.write("\x88"); //136 -> ^
+			// 未定义值
+			document.write("<br/>");
+			var num;
+			document.write(num,"<br/>")
+			//定义空值
+			var num = null;
+			document.write(num,"<br/>");
+			//对象object类型数据
+			var person = {
+				"Name": "Wang_zi",
+				"Sex": "man",
+				"Birth": ["1999","09","05"]
+			};
+			for (var x in person){
+				document.write(x,":",person[x],"<br/>");
+			}
+		</script>
+	</body>
+</html>

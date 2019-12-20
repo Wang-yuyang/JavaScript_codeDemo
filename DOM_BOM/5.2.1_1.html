@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>标签ID和标签名等两种获取方法</title>
+	</head>
+	<body>
+		<h3>I love HCIT</h3>
+		<div id="info">
+			<h2>Hello,World!</h2>
+			<h3>I'am Mirror王宇阳 is student</h3>
+		</div>
+		<script>
+			var id = document.getElementById("info"); 
+			var tag= document.getElementsByTagName("h3");// 全局
+			var idtag = id.getElementsByTagName("h3"); // div_info标签中的h3
+			
+			console.log(id);
+			console.log(tag);
+			console.log(idtag[0].innerHTML);
+			
+		</script>
+	</body>
+</html>

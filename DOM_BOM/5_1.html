@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>打开新窗口</title>
+	</head>
+	<body>
+		<div id="info"></div>
+		<input type="button" value="打开一个子窗口" onclick="makeNewWindow()" />
+		<script>
+			function makeNewWindow(){
+				make = window.open('','new','width=770,height=380');
+				make.document.write("<img src='../5/img/open.gif' />");
+				make.document.body.style.margin=0;
+				make.document.title='招标信息';	
+				make.focus();	
+				make.opener.document.write(make.print());
+			}
+			
+		</script>
+	</body>
+</html>

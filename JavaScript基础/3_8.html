@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var msg = "欢迎访问淮安信息技术职业学院 | 官方网站  ";//初始页面标题title 
+			function forTitle(){
+				document.title = msg;// 将msg写入HTML页面的Title标签中
+				msg = msg.substring(1,msg.length)+msg.substring(0,1);
+				// 将第一个元素按照向后递推并输出的方式,控制输出时间实现"滚动"效果
+				// 每一次调用,第一个字符自动的在上次之后变成最后一个字符,第二个字符变成第一个字符
+			}
+			setInterval('forTitle()',200);// setInterval实现计时循环调用函数
+			
+		</script>
+	</body>
+</html>

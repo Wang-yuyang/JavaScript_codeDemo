@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标移入、移出事件</title>
+	</head>
+	<body>
+		<div id="demi" style="background-color: red; height: 300px; width: 300px;"
+		onmouseout="Myout()" onmouseover="Myover()">
+			<h3 id="h3" ></h3>
+		</div>
+		<script type="text/javascript">
+			function Myout(){
+				document.getElementById("h3").innerHTML = "鼠标移出";
+			}
+			function Myover(){
+				document.getElementById("h3").innerHTML = "鼠标移入";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>innerHTML\innerText\outerHTML\outerText区别</title>
+	</head>
+	<body>
+		<h3>I love HCIT</h3>
+		<div id="info">
+			<h2>Hello,World!</h2>
+			<h3 id="put">I'am Mirror王宇阳 is student</h3>
+		</div>
+		<script>
+			var id = document.getElementById("put");
+			console.log(id.innerHTML);//HTML中可显页面的内容
+			console.log(id.innerText);//
+			console.log(id.outerHTML);//获取的ID标签对象的所有HTML内容
+			console.log(id.outerText);
+		</script>
+		
+	</body>
+</html>

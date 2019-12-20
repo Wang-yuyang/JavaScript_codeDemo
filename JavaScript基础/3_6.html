@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随机点名</title>
+	</head>
+	<!-- <style>
+		#bodyBJ {
+			background: url(img/images.jpg);	
+		}
+	</style> -->
+	<script type="text/javascript">
+		var namelist = ["潘丽芳","杨千纤","陈继","何利美","洪海燕","胡银","李贝贝","刘柳","李涛","杨宇"]
+		var mytime = null;
+		
+		function show(){
+			var box = document.getElementById("box");
+			var num = Math.floor(Math.random()*namelist.length);//随机生成数字下标
+			box.innerHTML = namelist[num];
+			mytime = setTimeout("show()",100);//setTimeout表示无限执行操作
+		}
+		
+		function doit() {
+			var bt = document.getElementById("bt");
+			if(mytime == null){
+				bt.innerHTML = "停止点名";
+				show();
+			} else {
+				bt.innerHTML = "开始点名";
+				// clearTimeout表示停止setTimeout操作
+				clearTimeout(mytime);//参数必须是setTimeout()返回的ID值
+				mytime = null;
+			}
+		}
+	</script>
+	<body id="bodyBJ">
+		<div id="box">Are Yun ……</div>
+		<div id="bt" onclick="doit()">开始点名</div>
+	</body>
+</html>

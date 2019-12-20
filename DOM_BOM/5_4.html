@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浏览器尺寸</title>
+	</head>
+	<body>
+		<div id="show">尺寸</div>
+		<script>
+			show();
+			function show(){
+				//高度和宽度
+				var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth ; 
+				var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				document.getElementById("show").innerHTML= "Width："+ w + "<br/>"+"Height:"+ h ;
+			}
+			window.onresize = function() {
+				show(); //浏览器窗口发生变化
+			}
+		</script>
+	</body>
+</html>

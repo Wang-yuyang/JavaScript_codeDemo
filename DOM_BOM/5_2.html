@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>打开新窗口</title>
+	</head>
+	<body>
+		<input type="button" value="打开一个子窗口" onclick="makeNewWindow()" />
+		<input type="button" value="关闭子窗口" onclick="focusmake()"/>
+		<script>
+			function makeNewWindow(){
+				make = window.open('','new','width=770,height=380');
+				make.document.write("<img src='../5/img/open.gif' />");
+				make.document.body.style.margin=0;
+				make.document.title='招标信息';	
+				make.focus();	
+	
+			}
+			function focusmake(){
+				if(confirm('是否关闭子窗口') && typeof(make) != 'undefined'){
+					// 弹出窗口确认是否关闭  &&   判断子窗口是否已关闭/
+					make.close();
+				} else if(typeof(make) != 'undefined'){
+					make.focus();//重新获取子窗口焦点
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数学对象</title>
+	</head>
+	<body>
+		<script>
+			var radius = 10 ; // 圆的半径
+			var area = Math.PI * Math.pow(radius,2); // 计算圆的面积
+			document.write(area);
+			// 若大量使用Math对象,使用 with方法
+			with(Math){
+				document.write((PI*pow(radius,2)).toFixed(2));
+			}
+			
+		</script>
+	</body>
+</html>

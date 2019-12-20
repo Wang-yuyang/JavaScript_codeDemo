@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>子节点数量</title>
+	</head>
+	<body>
+		<div id="demo">
+			<div id="d1"><span>Mirror</span><span>王宇阳</span><span>You</span></div>
+			<div id="d2">Hello,World!</div>
+			<div></div>
+		</div>
+		<script>
+			var demo = document.getElementById("demo");
+			var d1 = document.getElementById("d1");
+			var d2 = document.getElementById("d2");
+			
+			// childNodes:获取子节点对象的所有全部的集合(同样返回包括换行)
+			console.log(demo.childNodes.length)
+			console.log(demo.hasChildNodes);
+			//children:获取子节点对象的(标签)元素节点集合
+			console.log(demo.children.length);
+			//Nodetype:获取节点类型 3-文本节点 1-（标签）元素节点
+			var textNode = 0 ; 
+			var elementNode = 0 ;
+			for (var i = 0 ; i < demo.childNodes.length ; i++) {
+				if (demo.childNodes[i].nodeType == 3) {
+					textNode ++;
+				} else if(demo.childNodes[i].nodeType == 1){
+					elementNode ++;　
+				}
+			}
+			console.log("文本节点:"+textNode , "元素节点:"+elementNode);
+			
+			
+		</script>
+	</body>
+</html>

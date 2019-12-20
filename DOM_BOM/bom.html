@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>BOM-test</title>
+		<style type="text/css">
+			#popup {
+				width: 300px;
+				height:25px;
+				border: red solid 1px;
+				text-align: center;
+				margin-left: 100px;
+			}
+			#version {
+				width: 300px;
+				/* height: 50px; */
+				border: red solid 1px;
+				text-align: center;
+				margin-top: 20px;
+				margin-left: 100px;
+			}
+			#screen {
+				width: 300px;
+				/* height: 50px; */
+				border: red solid 1px;
+				text-align: center;
+				margin-top: 20px;
+				margin-left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cen" style=" width: 500px;  background-color: #e2e2e2 ;position: absolute;">
+			<div id="info" style="height: 40px; text-align: center;">
+				<input type="button" value="窗口绝对居中" onclick="showsize()" />
+			</div>
+			
+			
+			<div style="margin-top: 10px; text-align: center; ">
+				<input type="button" value="警告框" onclick="showalert()" />
+				<input type="button" value="确认框" onclick="showconfirm()" />
+				<input type="button" value="提示框" onclick="showprompt()" />
+				
+			</div>
+			<div id="popup" style="margin-top: 20px;" ></div>
+			
+			<div id="history" style="text-align: center;">
+				<input type="button" value="后退" onclick="javascript:history.go(-1)" />
+				<input type="button" value="刷新" onclick="javascript:history.go(0)" />
+				<input type="button" value="前进" onclick="javascript:history.go(1)" />
+			</div>
+			<div id="version">
+				<input type="button" value="浏览器信息" onclick="showversion()"/>
+			</div>
+			<div id="screen">
+				<input type="button" value="屏幕信息" onclick="showscreen()" />
+			</div>
+		</div>
+		
+		<script>
+			function showalert(){
+				window.alert("这是一个警告框");
+			}
+			function showconfirm(){
+				if(window.confirm("这是一个确认框")){
+					document.getElementById("popup").innerHTML="你选择【是】";
+				} else {
+					document.getElementById("popup").innerHTML="你选择【否】";
+					}
+			}
+			function showprompt(){
+				var str = window.prompt("这是一个提示框");
+				document.getElementById("popup").innerHTML="你输入的是："+str;
+			}
+			function showsize(){
+				var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth ;
+				var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight ; 
+				document.getElementById("info").innerHTML = "当前浏览器窗口："+w+"*"+h;
+				var Hdiv = document.getElementById("cen");
+				var left = (w-500)/2;
+				var top  = (h - Hdiv.offsetHeight)/2;
+				// 利用margin外边距的top和left来“绝对居中”在浏览器中间
+				document.getElementById("cen").style.top =  top+"px";
+				document.getElementById("cen").style.left = left+"px";
+				window.onresize = function(){
+					showsize();
+				}
+			}
+			function showversion(){
+				// navigator 浏览器信息
+				var put = document.getElementById("version");
+				put.innerHTML = "代号:"+navigator.appCodeName+"<br/>";
+				put.innerHTML+= "名称:"+navigator.appName+"<br/>";
+				put.innerHTML+= "版本:"+navigator.appVersion+"<br/>";
+				put.innerHTML+= "系统:"+navigator.platform+"<br/>";
+				put.innerHTML+= "信息:"+navigator.userAgent+"<br/>";
+			}
+			function showscreen() {
+				document.getElementById("screen").innerHTML = "屏幕尺寸:"+screen.height+"*"+screen.width+"<br/>";
+				document.getElementById("screen").innerHTML+= "窗口尺寸:"+screen.availHeight+"*"+screen.availWidth+"<br/>";
+				document.getElementById("screen").innerHTML+= "色彩深度:"+screen.colorDepth+"/色彩分辨率:"+screen.pixelDepth+"<br/>";
+			}
+		</script>
+	</body>
+</html>
