@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>js</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, 
+user-scalable=no" />
+		<style>
+			*{margin: 0;padding: 0;}
+#img_H_start{
+	position: relative;border: 1px solid gray;
+	width: auto;
+	margin: 20px auto;
+	height: 1000px
+	overflow: hidden;
+}
+#img_H_start ul{
+	position: absolute;
+	left: 0;
+}
+#img_H_start a{
+	position: absolute;
+	z-index: 2;
+	text-decoration: none;
+	top: 45%;
+	display: none;
+}
+#img_H_start ul li{
+	padding: 5px;
+	list-style: none;
+	width: 500px;
+	height: auto;
+	float: left;
+}
+#img_H_start ul li img{
+	width: 100%;
+	height: 100%;
+}
+</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oDiv = document.getElementById('img_H_start');
+				var oUl = oDiv.getElementsByTagName('ul')[0];
+				var aLi = oUl.getElementsByTagName('li');
+				var aA = oDiv.getElementsByTagName('a');
+				var iSpeed = 1; //正左负右
+				var timer = null;
+				//计算ul的宽为所有li的宽的和;
+				oUl.innerHTML += oUl.innerHTML + oUl.innerHTML;
+				oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+
+				function Slider() {
+					if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+						oUl.style.left = 0;
+					} else if (oUl.offsetLeft > 0) {
+						oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+					}
+					oUl.style.left = oUl.offsetLeft - iSpeed + 'px'; //正负为方向
+				}
+				timer = setInterval(Slider, 30);
+				aA[0].onclick = function() {
+					iSpeed = 1; //控制速度的正负
+				}
+				aA[1].onclick = function() {
+					iSpeed = -1;
+				}
+				oDiv.onmouseover = function() {
+					clearInterval(timer);
+				}
+				oDiv.onmouseout = function() {
+					timer = setInterval(Slider, 30);
+				}
+			};
+		</script>
+		<div id="img_H_start">
+			<ul>
+				<li><img src="img/jcb/1997_a.jpg" /></li>
+				<li><img src="img/jcb/1998_a.jpg" /></li>
+				<li><img src="img/jcb/1999_a.jpg" /></li>
+				<li><img src="img/jcb/2000_a.jpg" /></li>
+				<li><img src="img/jcb/2001_a.jpg" /></li>
+				<li><img src="img/jcb/2002_a.jpg" /></li>
+				<li><img src="img/jcb/2003_a.jpg" /></li>
+				<li><img src="img/jcb/2004_a.jpg" /></li>
+				<li><img src="img/jcb/2005_a.jpg" /></li>
+				<li><img src="img/jcb/2006_a.jpg" /></li>
+				<li><img src="img/jcb/2007_a.jpg" /></li>
+				<li><img src="img/jcb/2008_a.jpg" /></li>
+				<li><img src="img/jcb/2009_a.jpg" /></li>
+				<li><img src="img/jcb/2010_a.jpg" /></li>
+				<li><img src="img/jcb/2011_a.jpg" /></li>
+				<li><img src="img/jcb/2012_a.jpg" /></li>
+				<li><img src="img/jcb/2013_a.jpg" /></li>
+				<li><img src="img/jcb/2014_a.jpg" /></li>
+				<li><img src="img/jcb/2015_a.jpg" /></li>
+				<li><img src="img/jcb/2016_a.jpg" /></li>
+				<li><img src="img/jcb/2017_a.jpg" /></li>
+				<li><img src="img/jcb/2018_a.jpg" /></li>
+				<li><img src="img/jcb/2019_a.jpg" /></li>
+			</ul>
+			<a href="javascript:;" style="left:10px;">
+				<</a> <a href="javascript:;" style="right:10px;">>
+			</a>
+		</div>
+	</body>
+</html>

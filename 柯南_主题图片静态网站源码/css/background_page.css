@@ -1,0 +1,101 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../img/background.gif);
+	width: 100%;
+	position: relative;
+	z-index: 999;
+}
+
+.body_box{
+	width: 100%;
+	/* background-color: aqua; */
+	position: relative;
+	z-index: 44;
+	height: auto;
+}
+
+.box_img_nav img{
+	position: relative;
+	left: 20%;
+	top: 60px;
+	
+	width: 60%;
+	
+}
+
+.text_h{
+	position: relative;
+	left: 30%;
+	top:60px;
+	width: 40%;
+	height: 60px;
+	
+	background: rgba(204,204,204,.7);
+	border-radius: 30px;
+	z-index: 2;
+	text-align: center;
+	line-height: 60px;
+}
+.role_box{
+	width: 60%;
+	position: relative;
+	left: 20%;
+	
+	height: auto;
+	
+}
+.role_js{
+	position: relative;
+	top: 60px;
+	float: left;
+	width: 520px;
+	margin: 15px;
+	padding: 10px;
+	background: rgba(204,204,204,.7);
+	border-radius: 10px;
+	
+	/* height: 250px; */
+}
+.role_js img{
+	width: 30%;
+	height: 250px;
+	float: left;
+}
+.role_text p{
+	margin-bottom: 15px;
+	margin-right: 5px;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.role_text{
+	/* float: left; */
+	position: relative;
+	left: 15px;
+	margin: 10px;
+}
+.img_box_right{
+	/* background: #00FFFF; */
+	width: 18%;
+	float: right;
+	position: absolute;
+	top: 420px;
+	right: 0.625rem;
+	height: 1000px;
+}
+.img_box_right img{
+	width: 100%;
+	margin-bottom: 50px;
+}
+.back_foot_left{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 18%;
+}
+.back_foot_left img{
+	width: 100%;
+}

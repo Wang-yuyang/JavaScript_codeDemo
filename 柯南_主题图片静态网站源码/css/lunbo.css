@@ -1,0 +1,33 @@
+.lunbo_img {
+	width: 100% ;
+	height: 100%;
+	margin: 0 auto;
+	scrollbar-face-color: #000;
+}
+
+.lunbo_img img {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+
+.lunbo_img .img1 {
+	display: block;
+}
+
+.lunbo_img .img2 {
+	display: none;
+}
+
+.lunbo_img .img3 {
+	display: none;
+}
+#lunbo_box{
+	width: 60%;
+	height: 480px;
+	/* position: absolute; */
+	position: relative;
+	left: 20%;
+	background-color: #000000;
+}

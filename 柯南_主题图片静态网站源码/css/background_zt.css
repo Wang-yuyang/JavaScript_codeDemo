@@ -1,0 +1,88 @@
+* {
+	margin: 0px;
+	padding: 0px;
+
+}
+
+body {
+	/* 设置背景图片 */
+	background-image: url(../img/background.gif);
+	/*opacity: 0.9 ;*/
+	width: 100%;
+	position: relative;
+	z-index: 3;
+	/* height: 68.75rem; */
+}
+
+.body_box {
+	/* position: relative; */
+	width: 100%;
+	/* background-color: aqua; */
+	/* z-index: 44; */
+	height: auto;
+}
+
+.img_box{
+	clear: both;
+	width: 60%;
+	background-color: #FFFFFF;
+	position: relative;
+	left: 20%;
+	top: 80px;
+	height: 100px;
+}
+.img_W{
+	clear: both;
+	margin-bottom: 20px;
+	position: relative;
+	width: 100%;
+}
+.img_box img{
+	width: 100%;
+}
+/* .img_box img:hover{
+	width: 120%;
+	margin-bottom:20px;
+} */
+.img_H_l{
+	clear: both;
+	float: left;
+	width: 45%;
+	margin-bottom: 50px;
+}
+.img_H_r{
+	float: right;
+	width: 45%;
+	
+}
+.back_foot{
+	width: 20%;
+	position: fixed;
+	bottom: -10px;
+	left: 0;
+}
+.back_foot img{
+	width: 100%;
+}
+.back_foot_left{
+	width: 18%;
+	position: fixed;
+	left: 10px;
+	top: 80px;
+}
+.back_foot_left img{
+	width: 100%;
+}
+.img_box_right{
+	/* background: #00FFFF; */
+	width: 18%;
+	float: right;
+	position: absolute;
+	top: 80px;
+	right: 0.625rem;
+	height: 1000px;
+}
+.img_box_right img{
+	width: 100%;
+	margin-bottom: 50px;
+}
